@@ -1,0 +1,14 @@
+{
+    "name": "event-sourcing",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "jest": "jest --env node",
+        "test": "npm run jest"
+    },
+    "author": "Anthony Zavala",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "24.8.0"
+    }
+}
