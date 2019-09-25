@@ -1,5 +1,6 @@
 # event-sourcing-workshop
-A workshop for hands-on introduction to Event Sourcing
+A workshop for hands-on introduction to Event Sourcing.
+
 The fundamental idea of Event Sourcing is that changes to state (events) are persisted in sequence. As opposed to storing the current state.
 
 ## Prerequisites
