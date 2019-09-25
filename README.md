@@ -5,11 +5,11 @@ A workshop for hands-on introduction to Event Sourcing.
 The fundamental idea of Event Sourcing is that changes to state (events) are persisted in sequence. As opposed to storing the current state. A common use case for Event Sourcing is to persist events from an aggregate.
 
 ## Component Types
-| Input/Output | Events                     | Commands                      | External                  |
-|--------------|----------------------------|-------------------------------|---------------------------|
-| Events       | Translator (ACL)           | Process Manager               | Projector (Projection)    |
-| Commands     | **Aggregator** (Aggregate) | Controller (Translator/ACL)   | Actuator                  |
-| External     | Sensor                     | Actor                         | System                    |
+| **Input/Output** | **Events**                 | **Commands**                  | **External**              |
+|------------------|----------------------------|-------------------------------|---------------------------|
+| **Events**       | Translator (ACL)           | Process Manager               | Projector (Projection)    |
+| **Commands**     | **Aggregator** (Aggregate) | Controller (Translator/ACL)   | Actuator                  |
+| **External**     | Sensor                     | Actor                         | System                    |
 
 ## Prerequisites
 - .NET
