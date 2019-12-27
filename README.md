@@ -22,7 +22,7 @@ The fundamental idea of Event Sourcing is that changes to state (events) are per
     - [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/)
 
 ## Concepts
-In this workshop we will be working with the an inventory item example. Assume this example is for a store and a user can be create, stock, sell, activate, and deactivate inventory items.
+In this workshop we will be working with the inventory item example. Assume this example is for a store and a user can be create, stock, sell, activate, and deactivate inventory items.
 
 ### State
 InventoryItem is a container that holds state.
