@@ -16,7 +16,7 @@ The fundamental idea of Event Sourcing is that changes to state (events) are per
     - [Visual Studio Code](https://code.visualstudio.com/download) (or anything that can be used for dotnet development)
     - [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
     - [C# for Visual Studio Code version 1.17.1 or later](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-    - [F#: Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)
+    - [F#: Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) (If you are using VSCode and prefer F#)
 - Node.js
     - [Visual Studio Code](https://code.visualstudio.com/download) (or anything that can be used for Node development)
     - [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/)
