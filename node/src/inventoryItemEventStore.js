@@ -13,7 +13,6 @@ const inventoryItems =
         new Stocked(10),
         new Activated(),
         new Sold(20),
-        new Deactivated()
     ],
 }
 

@@ -17,7 +17,7 @@ namespace EventSourcing
                 },
                 { new Guid("26945c8a-49d2-4b0b-86e2-f480ab2bf4ec"), new List<InventoryEvent>
                     {
-                        new InventoryEvent.Created(new Guid("26945c8a-49d2-4b0b-86e2-f480ab2bf4ec"), "4x4"),
+                        new InventoryEvent.Created(new Guid("26945c8a-49d2-4b0b-86e2-f480ab2bf4ec"), "Item 2"),
                         new InventoryEvent.Stocked(10),
                         new InventoryEvent.Activated(),
                         new InventoryEvent.Sold(20),

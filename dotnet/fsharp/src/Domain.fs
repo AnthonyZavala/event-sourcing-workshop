@@ -39,7 +39,7 @@ let private apply (state: InventoryItem) event =
         -> { state with Id = inventoryId; Name = name; }
     | Stocked count
         -> { state with Count = state.Count + count; }
-    | Sold count when state.Count - count >= 0
+    | Sold count // when state.Count - count >= 0
         -> { state with Count = state.Count - count; }
     | Deactivated
         -> { state with Active = false; }
@@ -54,13 +54,13 @@ let private execute command (state: InventoryItem) =
         -> [ Created (inventoryId, name) ]
     | Stock count when state.Id <> Guid.Empty && count > 0
         -> [ Stocked count ]
-    | Sell count when state.Id <> Guid.Empty && state.Count - count >= 0 && state.Active && count > 0
+    | Sell count when state.Id <> Guid.Empty // && state.Count - count >= 0 && state.Active && count > 0
         -> [ Sold count ]
     | Deactivate when state.Id <> Guid.Empty && state.Active
         -> [ Deactivated ]
     | Activate when state.Id <> Guid.Empty && not state.Active
         -> [ Activated ]
-    | _ -> [ Errored (command, state) ]
+    | _ -> [] // Errored (command, state)
 
 let Aggregate =
     { Initialize = InventoryItem.Initialize

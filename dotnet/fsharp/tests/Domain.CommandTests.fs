@@ -25,7 +25,7 @@ module CommandTests =
         let rdmStock = rdm.Next()
                
         Given { Id = Guid.NewGuid(); Name = "Test"; Count = rdm.Next(); Active = false; }
-        |> When (Stock rdmStock)
+        |> When (Activate) // TODO: execute stock command to create stocked event
         |> Then (Stocked rdmStock)
     
     [<Fact>]
@@ -33,27 +33,27 @@ module CommandTests =
         let rdmStock = rdm.Next()
 
         Given { Id = Guid.NewGuid(); Name = "Test"; Count = rdmStock; Active = true; } 
-        |> When (Sell rdmStock)
+        |> When (Activate) // TODO: execute sell command to create sold event
         |> Then (Sold rdmStock)
-     
-    [<Fact>]
-    let ``Given sold out inventory item, When Sell command, Then Errored event`` () =
-        let rdmStock = rdm.Next()
-        let state = { Id = Guid.NewGuid(); Name = "Test"; Count = 0; Active = true; }
-        let command = Sell rdmStock
-
-        Given state
-        |> When command
-        |> Then (Errored (command, state))
 
     [<Fact>]
     let ``Given inventory item, When Deactivate command, Then Deactivated event`` () =
         Given { Id = Guid.NewGuid(); Name = "Test"; Count = 0; Active = true; }
-        |> When Deactivate
+        |> When Activate // TODO: execute deactivate command to activate the item
         |> Then Deactivated
 
     [<Fact>]
     let ``Given inventory item, When Activate command, Then Activated event`` () =
         Given { Id = Guid.NewGuid(); Name = "Test"; Count = 0; Active = false; }
-        |> When Activate
+        |> When Deactivate // TODO: execute activate command to activate the item
         |> Then Activated
+
+    // [<Fact>]
+    // let ``Given sold out inventory item, When Sell command, Then Errored event`` () =
+    //     let rdmStock = rdm.Next()
+    //     let state = { Id = Guid.NewGuid(); Name = "Test"; Count = 0; Active = true; }
+    //     let command = Sell rdmStock
+
+    //     Given state
+    //     |> When command
+    //     |> Then (Errored (command, state))

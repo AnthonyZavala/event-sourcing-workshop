@@ -27,7 +27,7 @@ module EventTests =
         let stockedCount = rdm.Next()
 
         Given initialState
-        |> When (Stocked stockedCount)
+        |> When Activated // TODO: apply stocked event
         |> Then { initialState with Count = stockedCount }
 
     [<Fact>]
@@ -36,7 +36,7 @@ module EventTests =
         let soldCount = rdm.Next(10)
 
         Given initialState
-        |> When (Sold soldCount)
+        |> When Activated // TODO: apply sold event
         |> Then { initialState with Count = (initialState.Count - soldCount) }
 
     [<Fact>]
@@ -44,7 +44,7 @@ module EventTests =
         let initialState = { Id = Guid.NewGuid(); Name = null; Count = 0; Active = true; }
 
         Given initialState
-        |> When (Deactivated)
+        |> When Activated // TODO: apply deactivated event
         |> Then { initialState with Active = false }
 
     [<Fact>]
@@ -52,5 +52,5 @@ module EventTests =
         let initialState = { Id = Guid.NewGuid(); Name = null; Count = 0; Active = false; }
 
         Given initialState
-        |> When (Activated)
+        |> When Deactivated // TODO: apply activated event
         |> Then { initialState with Active = true }
