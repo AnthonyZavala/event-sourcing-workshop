@@ -71,15 +71,15 @@ InventoryCommand defines the commands that a user can ask to execute on an Inven
 ```
 
 ### Event Sourcing Functions
-The basic function to describe event sourcing is: `(state, event) => state'`  
+The basic function to describe event sourcing is: `(state, event) -> state'`  
 This function is described as: given some state, when an event is applied, then a new state is given.  
 This function is often referred to as the `Apply` function.
 
-When utilizing commands the execute function is: `(state, command) => event`  
+When utilizing commands the execute function is: `(state, command) -> event`  
 This function is describe as: given some state, when a command is executed, then an event is given.  
 This function is where your business logic belongs and is often referred to as the `Execute` function.
 
-Another function that is useful for event sourcing is an initialization function. `() => state`  
+Another function that is useful for event sourcing is an initialization function. `() -> state`  
 This function allows for a known initialization state before applying events.
 
 ## Workshop
@@ -90,9 +90,9 @@ This workshop is implemented as using Quality Assurance and test writing to veri
 - Build if using dotnet `dotnet build`
 - Run the tests `dotnet test` or `npm run test`
     - A number of the tests will fail.
-- Open the `EventTests.cs` or `event.test.js` file under the tests directory.
+- Open the `Domain.EventTests.fs`, `EventTests.cs`, or `event.test.js` file under the tests directory.
 - Fix the broken event tests by following the `Given,When,Then` pattern of the test names. You will need to use the Apply function.
-- Open the `CommandTests.cs` or `command.test.js` file under the tests directory.
+- Open the `Domain.CommandTests.fs`, `CommandTests.cs` or `command.test.js` file under the tests directory.
 - Fix the broken command tests by following the `Given,When,Then` pattern of the test names. You will need to use the Execute function.
 
 ### Bonus Concepts
