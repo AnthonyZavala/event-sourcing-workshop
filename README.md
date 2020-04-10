@@ -14,7 +14,7 @@ The fundamental idea of Event Sourcing is that changes to state (events) are per
 ## Prerequisites
 - .NET
     - [Visual Studio Code](https://code.visualstudio.com/download) (or anything that can be used for dotnet development)
-    - [.NET Core SDK 2.2 or later](https://www.microsoft.com/net/download/all)
+    - [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core)
     - [C# for Visual Studio Code version 1.17.1 or later](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (If you are using VSCode and prefer C#)
     - [F#: Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) (If you are using VSCode and prefer F#)
 - Node.js
@@ -87,7 +87,7 @@ This workshop is implemented as using Quality Assurance and test writing to veri
 
 ### Steps
 - Clone this repo and navigate to the directory of your chosen framework/language.
-- Build if using dotnet `dotnet build`
+- Build if using dotnet `dotnet build`; Install packages if using node `npm i`
 - Run the tests `dotnet test` or `npm test`
     - A number of the tests will fail.
 - Open the `Domain.EventTests.fs`, `EventTests.cs`, or `event.test.js` file under the tests directory.
