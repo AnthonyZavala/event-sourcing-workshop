@@ -87,7 +87,7 @@ This workshop is implemented as using Quality Assurance and test writing to veri
 
 ### Steps
 - Clone this repo and navigate to the directory of your chosen framework/language.
-- Build if using dotnet `dotnet build`
+- Build if using dotnet `dotnet build`; Install packages if using node `npm i`
 - Run the tests `dotnet test` or `npm test`
     - A number of the tests will fail.
 - Open the `Domain.EventTests.fs`, `EventTests.cs`, or `event.test.js` file under the tests directory.
